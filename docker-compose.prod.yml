@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+    prod:
+        container_name: nest-skeleton-prod
+        build:
+            context: .
+            dockerfile: Dockerfile
+            args:
+                - TARGET=production
+                - SERVER_PORT=${SERVER_PORT}
+                - NPM_TOKEN=${NPM_TOKEN}
+        ports:
+            - 8050:8050
+        environment:
+            LOG_LEVEL: ${LOG_LEVEL}
+            NODE_CONFIG_DIR: ${NODE_CONFIG_DIR}
+            ENABLE_OPEN_API: ${ENABLE_OPEN_API}

@@ -1,0 +1,13 @@
+{
+    "apis": {
+        "test": {
+            "url": "http://localhost:3000",
+            "apiKey": "none"
+        }
+    },
+    "swagger": {
+        "title": "Nest Skeleton",
+        "description": "Nest Skeleton API",
+        "version": 1.0
+    }
+}

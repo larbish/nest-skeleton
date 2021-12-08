@@ -1,0 +1,23 @@
+{
+    "npm": {
+        "publish": false
+    },
+    "github": {
+        "release": false
+    },
+    "git": {
+        "requireCleanWorkingDir": false,
+        "commitMessage": "release: V${version}",
+        "commit": true,
+        "commitArgs": ["--no-verify"],
+        "tag": true,
+        "tagAnnotation": "release: V${version}",
+        "tagName": "release-${version}",
+        "push": true,
+        "pushRepo": null,
+        "afterReleaseCommand": "npm run post:release"
+    },
+    "hooks": {
+        "before:git:bump": "./scripts/generate-changelog.sh ${version}"
+    }
+}

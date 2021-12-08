@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.git
+.gitignore
+scripts
+test
+CHANGELOG.md
+.eslintrc.json
+.huskyrc.json
+.prettierrc
+.release-it.json
+.env

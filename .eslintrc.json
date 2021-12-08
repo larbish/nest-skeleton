@@ -1,0 +1,62 @@
+{
+    "root": true,
+    "ignorePatterns": ["projects/**/*"],
+    "overrides": [
+        {
+            "files": ["*.ts"],
+            "plugins": ["@typescript-eslint", "prettier", "import", "unicorn", "prefer-arrow"],
+            "parserOptions": {
+                "project": "./tsconfig.json"
+            },
+            "extends": ["airbnb-typescript/base", "plugin:prettier/recommended", "prettier"],
+            "rules": {
+                "@typescript-eslint/no-inferrable-types": "error",
+                "unicorn/no-unused-properties": "error",
+                "import/prefer-default-export": "off",
+                "prefer-arrow/prefer-arrow-functions": "error",
+                "@typescript-eslint/array-type": [
+                    "error",
+                    {
+                        "default": "array"
+                    }
+                ],
+                "@typescript-eslint/explicit-member-accessibility": [
+                    "off",
+                    {
+                        "accessibility": "explicit"
+                    }
+                ],
+                "@typescript-eslint/no-explicit-any": "error",
+                "@typescript-eslint/no-this-alias": "error",
+                "@typescript-eslint/no-unnecessary-boolean-literal-compare": "error",
+                "@typescript-eslint/triple-slash-reference": "error",
+                "@typescript-eslint/type-annotation-spacing": "off",
+                "brace-style": ["off", "off"],
+                "complexity": [
+                    "error",
+                    {
+                        "max": 11
+                    }
+                ],
+                "curly": ["error", "multi-line"],
+                "eol-last": "off",
+                "import/order": "error",
+                "linebreak-style": "off",
+                "max-classes-per-file": ["error", 5],
+                "max-len": "off",
+                "new-parens": "off",
+                "newline-per-chained-call": "off",
+                "no-duplicate-imports": "error",
+                "no-extra-semi": "off",
+                "no-irregular-whitespace": "off",
+                "no-trailing-spaces": "off",
+                "prefer-template": "error",
+                "space-before-function-paren": "off",
+                "space-in-parens": ["off", "never"],
+                "eqeqeq": ["error", "always"],
+                "no-console": ["error", {}],
+                "class-methods-use-this": "off"
+            }
+        }
+    ]
+}

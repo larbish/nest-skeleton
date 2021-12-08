@@ -1,0 +1,24 @@
+version: '3.7'
+
+services:
+    dev:
+        container_name: nest-skeleton-dev
+        build:
+            context: .
+            target: builder
+            args:
+                - TARGET=dev
+                - SERVER_PORT=${SERVER_PORT}
+                - NPM_TOKEN=${NPM_TOKEN}
+        volumes:
+            - ./src:/app/src
+        ports:
+            - 8050:8050
+        command: npm run start:dev
+        environment:
+            LOG_LEVEL: ${LOG_LEVEL}
+            NODE_CONFIG_DIR: ${NODE_CONFIG_DIR}
+            ENABLE_OPEN_API: ${ENABLE_OPEN_API}
+        # network_mode is only used for communicate with localhost on local machine for example endpoint purpose
+        # Can be deleted
+        network_mode: 'host'
